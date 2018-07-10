@@ -19,6 +19,7 @@ facesearch path/to/Image
 Test image:
 
 ![alt text](./example/test.jpg "Test image")
+
 On command line:
 ``` bash
 anon@anon-pc:~/FaceSearch$ facesearch example/test.jpg

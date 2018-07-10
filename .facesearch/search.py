@@ -36,11 +36,11 @@ def grab(faces):
         faces[response]
     except ValueError:
         print('Enter a valid integer. Try again.')
-        grab()
+        grab(faces)
     except IndexError:
         print('Enter a valid integer within %d to %d. Try again.' %
               (0, len(faces) - 1))
-        grab()
+        grab(faces)
     return response
 
 

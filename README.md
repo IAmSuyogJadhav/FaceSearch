@@ -16,5 +16,32 @@ Once it finishes, you can now use the following command on the terminal to detec
 facesearch path/to/Image
 ```
 ## Examples
+Test image:
+
+![alt text](./example/test.jpg "Test image")
+On command line:
+``` bash
+anon@anon-pc:~/FaceSearch$ facesearch example/test.jpg
+[ INFO:0] Initialize OpenCL runtime...
+---------------------------------------------------------------------
+On the next screen, note the number for the face you want to search.
+---------------------------------------------------------------------
+Press any key to continue...
+
+Input the face number:
+1
+Uploading image..
+Thanks for using this tool! Please report any bugs to github.
+anon@anon-pc:~/FaceSearch$ Created new window in existing browser session.
+█
+```
+Window:
+
+![alt text](./example/test0.png "The output window")
+
+In the browser:
+
+![alt text](./example/test1.png "Browser output")
 
 Any feedback, bug reports and issues are welcome!
+

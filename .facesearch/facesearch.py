@@ -3,8 +3,8 @@
 #       █▀▀ █▄▄█ █   █▀▀   ▀▀█ █▀▀ █▄▄█ █▄▄▀ █   █▀▀█       #
 #       ▀   ▀  ▀ ▀▀▀ ▀▀▀   ▀▀▀ ▀▀▀ ▀  ▀ ▀ ▀▀ ▀▀▀ ▀  ▀       #
 #############################################################
-# FaceSearch: Search for faces in a given image using       #
-# Google Reverse Image Search                               #
+# FaceSearch: Searches for faces in a given image using     #
+# Google Reverse Image Search engine                        #
 # ▀ ▀ ▀ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ ▀ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ ▀ ▀ ▀ ▀ #
 # File name: facesearch.py                                  #
 # Author: Suyog Jadhav (https://github.com/IAmSuyogJadhav)  #

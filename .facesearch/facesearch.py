@@ -19,7 +19,48 @@
 import numpy as np
 import cv2
 import sys
-from search import grab, Search  # A helper script.
+import requests
+import webbrowser
+import os
+
+
+def Search():
+    """
+    Uploads the _search_.jpg file to Google and searches for it using Google
+    Reverse Image Search.
+    """
+    filePath = '_search_.png'
+    searchUrl = 'http://www.google.com/searchbyimage/upload'
+    multipart = {
+        'encoded_image': (filePath, open(filePath, 'rb')),
+        'image_content': ''}
+
+    print("Uploading image..")
+    response = requests.post(searchUrl, files=multipart, allow_redirects=False)
+    fetchUrl = response.headers['Location']
+    webbrowser.open(fetchUrl)
+    print("Thanks for using this tool! Please report any issues to github."
+          "\nhttps://github.com/IAmSuyogJadhav/FaceSearch/issues")
+    os.remove('_search_.png')
+
+
+def handle_click(event, x, y, flags, params):
+    """
+    Records clicks on the image and lets the user choose one of the detected
+    faces by simply pointing and clicking.
+    """
+    # Capture when the LClick is released
+    if event == cv2.EVENT_LBUTTONUP and y > a // 2:  # Ignore clicks on padding
+        response = x // (faces_copy.shape[1] // len(faces))
+        cv2.destroyAllWindows()
+        cv2.imwrite('_search_.png', faces[response])
+        try:
+            Search()
+        except KeyboardInterrupt:  # Delete the generated image if user stops
+            print("\nTerminated execution. Cleaning up...")  # the execution.
+            os.remove('_search_.png')
+        sys.exit()
+
 
 # The path to the face detection Haar cascade. Specified in the install.sh file
 cascade = sys.argv[1]
@@ -27,8 +68,7 @@ cascade = sys.argv[1]
 try:
     path = sys.argv[2]
 except IndexError:  # Check if any path is entered or not.
-    print("""Please input a path.
-Usage: python search.py path/to/file""")
+    print("Please input a path.\nUsage: python search.py path/to/file")
     sys.exit()
 
 image = cv2.imread(path)
@@ -83,22 +123,12 @@ faces_copy = np.pad(  # Padding above to write some text.
 
 cv2.putText(  # Writing some text on the top padded portion.
         faces_copy,
-        'Note the number of the face to search.', (5, a // 4),
+        # 'Note the number of the face to search.', (5, a // 4),
+        'Click on the face you want to search for.', (5, a // 4),
         cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 200, 0), lineType=cv2.LINE_AA
         )
 
-print("---------------------------------------------------------------------")
-print("On the next screen, note the number for the face you want to search.")
-print("---------------------------------------------------------------------")
-print("Press any key to continue...")
-input()
-
-cv2.imshow('Faces found', faces_copy)
+cv2.namedWindow('Choose the face')
+cv2.setMouseCallback('Choose the face', handle_click)
+cv2.imshow('Choose the face', faces_copy)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
-response = None
-
-print('Input the face number:')
-response = grab(faces)
-cv2.imwrite('~/.facesearch/_search_.jpg', faces[response])
-Search()

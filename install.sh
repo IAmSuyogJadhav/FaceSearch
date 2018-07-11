@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "Installing OpenCV, NumPy and Selenium"
-pip install NumPy opencv-pytyhon selenium
+echo "Installing OpenCV and NumPy..."
+pip install NumPy opencv-python
 
 echo "Installing FaceSearch..."
 cp .facesearch ~ -r

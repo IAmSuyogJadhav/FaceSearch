@@ -22,6 +22,7 @@ import sys
 import requests
 import webbrowser
 import os
+import urllib
 
 
 def Search():
@@ -71,7 +72,17 @@ except IndexError:  # Check if any path is entered or not.
     print("Please input a path.\nUsage: python search.py path/to/file")
     sys.exit()
 
-image = cv2.imread(path)
+if path.startswith('http:') or path.startswith('https:'):
+    try:
+        req = urllib.request.urlopen(path)
+        arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
+        image = cv2.imdecode(arr, -1)
+    except:
+        print('Couldn\'t load the image from given url.')
+        sys.exit()
+else:
+    image = cv2.imread(path)
+
 if image is None:  # Check if the path is valid.
     print("""Image could not be loaded.
     1. Make sure you typed in the path to the image correctly.

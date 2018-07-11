@@ -24,15 +24,9 @@ On command line:
 ``` bash
 anon@anon-pc:~/FaceSearch$ facesearch example/test.jpg
 [ INFO:0] Initialize OpenCL runtime...
----------------------------------------------------------------------
-On the next screen, note the number for the face you want to search.
----------------------------------------------------------------------
-Press any key to continue...
-
-Input the face number:
-1
 Uploading image..
-Thanks for using this tool! Please report any bugs to github.
+Thanks for using this tool! Please report any issues to github.
+https://github.com/IAmSuyogJadhav/FaceSearch/issues
 anon@anon-pc:~/FaceSearch$ Created new window in existing browser session.
 █
 ```

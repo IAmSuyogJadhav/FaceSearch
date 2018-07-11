@@ -56,22 +56,36 @@ for i, face in enumerate(faces_copy):  # Prepare for displaying.
     faces_copy[i] = cv2.resize(face, (a, a))  # Resize faces
     faces_copy[i] = np.pad(  # Pad the faces with a white border
             faces_copy[i], ((2, 2), (2, 2), (0, 0)),
-            mode='constant', constant_values=((255, 255), (255, 255), (0, 0)))
+            mode='constant', constant_values=((255, 255), (255, 255), (0, 0))
+            )
     cv2.circle(  # Draw a quarter-circle at bottom-left of image.
-            faces_copy[i], (5, a), int(0.25*a), (0, 200, 0), -1)
+            faces_copy[i], (5, a), int(0.25*a), (0, 200, 0), -1
+            )
     cv2.putText(  # Type the index of the face over the quarter circle.
             faces_copy[i], str(i), (0, a), cv2.FONT_HERSHEY_DUPLEX,
-            0.007*a, color=(255, 255, 255), thickness=1, lineType=cv2.LINE_AA)
+            0.007*a, color=(255, 255, 255), thickness=1, lineType=cv2.LINE_AA
+            )
 
 faces_copy = np.hstack(tuple(faces_copy))  # For creating a single strip
+
+if faces_copy.shape[1] < 4 * a:
+    pad = 4 * a - faces_copy.shape[1]
+    faces_copy = np.pad(
+            faces_copy, ((0, 0), (pad // 2, pad // 2), (0, 0)),
+            mode='constant', constant_values=((0, 0), (255, 255), (0, 0))
+            )
+
+
 faces_copy = np.pad(  # Padding above to write some text.
         faces_copy, ((a//2, 0), (0, 0), (0, 0)),
-        mode='constant', constant_values=((255, 255), (0, 0), (0, 0)))
+        mode='constant', constant_values=((255, 255), (0, 0), (0, 0))
+        )
 
 cv2.putText(  # Writing some text on the top padded portion.
         faces_copy,
         'Note the number of the face to search.', (5, a // 4),
-        cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 200, 0), lineType=cv2.LINE_AA)
+        cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 200, 0), lineType=cv2.LINE_AA
+        )
 
 print("---------------------------------------------------------------------")
 print("On the next screen, note the number for the face you want to search.")

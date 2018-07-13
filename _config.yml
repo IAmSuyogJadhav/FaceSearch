@@ -1,3 +1,6 @@
 title: FaceSearch
 description: Searches for faces in a given image using the Google Reverse Image Search engine.
 theme: jekyll-theme-cayman
+github:
+  zip_url: https://github.com/IAmSuyogJadhav/FaceSearch/archive/master.zip
+  clone_url: https://github.com/IAmSuyogJadhav/FaceSearch.git

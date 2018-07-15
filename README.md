@@ -15,6 +15,9 @@ Once it finishes, you can now use the following command on the terminal to detec
 ``` bash
 facesearch path/to/Image
 ```
+Also, note that the `path/to/Image` can be an internet URL as well! (prefixed with http: or https:)
+So, you can just drag an image off the internet over the terminal to get its URL pasted over there and search for faces in it using FaceSearch. Really convenient.
+
 ## Examples
 Test image:
 

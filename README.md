@@ -33,7 +33,7 @@ https://github.com/IAmSuyogJadhav/FaceSearch/issues
 anon@anon-pc:~/FaceSearch$ Created new window in existing browser session.
 █
 ```
-Window:
+Output Window:
 
 ![alt text](./example/test0.png "The output window")
 

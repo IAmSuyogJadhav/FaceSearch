@@ -24,7 +24,7 @@ Test image:
 ![alt text](./example/test.jpg "Test image")
 
 On command line:
-``` bash
+```
 anon@anon-pc:~/FaceSearch$ facesearch example/test.jpg
 [ INFO:0] Initialize OpenCL runtime...
 Uploading image..

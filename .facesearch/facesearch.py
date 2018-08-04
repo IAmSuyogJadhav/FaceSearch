@@ -10,7 +10,7 @@
 # File name: facesearch.py                                  #
 # Author: Suyog Jadhav (https://github.com/IAmSuyogJadhav)  #
 # Date created: 10 Jul 2018                                 #
-# Date last modified: 10 Jul 2018                           #
+# Date last modified: 16 Jul 2018                           #
 # Python Version: 3.6                                       #
 # ▀ ▀ ▀ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ ▀ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀ ▀ ▀ ▀ ▀ #
 # Fork me on: https://github.com/IAmSuyogJadhav/FaceSearch  #
@@ -119,8 +119,8 @@ for i, face in enumerate(faces_copy):  # Prepare for displaying.
 
 faces_copy = np.hstack(tuple(faces_copy))  # For creating a single strip
 
-if faces_copy.shape[1] < 4 * a:
-    pad = 4 * a - faces_copy.shape[1]
+if faces_copy.shape[1] < 4 * a:  # Pre-calculated
+    pad = 4 * a - faces_copy.shape[1]  # Calculating required padding
     faces_copy = np.pad(
             faces_copy, ((0, 0), (pad // 2, pad // 2), (0, 0)),
             mode='constant', constant_values=((0, 0), (255, 255), (0, 0))
@@ -134,7 +134,6 @@ faces_copy = np.pad(  # Padding above to write some text.
 
 cv2.putText(  # Writing some text on the top padded portion.
         faces_copy,
-        # 'Note the number of the face to search.', (5, a // 4),
         'Click on the face you want to search for.', (5, a // 4),
         cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 200, 0), lineType=cv2.LINE_AA
         )

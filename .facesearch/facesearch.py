@@ -30,11 +30,11 @@ def Search():
     Uploads the _search_.jpg file to Google and searches for it using Google
     Reverse Image Search.
     """
-    filePath = '_search_.png'
-    searchUrl = 'http://www.google.com/searchbyimage/upload'
+    filePath = '_search_.png'  # Don't change
+    searchUrl = 'http://www.google.com/searchbyimage/upload'  # Don't change
     multipart = {
         'encoded_image': (filePath, open(filePath, 'rb')),
-        'image_content': ''}
+        'image_content': ''}  # The format we need it to be in
 
     print("Uploading image..")
     response = requests.post(searchUrl, files=multipart, allow_redirects=False)
@@ -42,7 +42,7 @@ def Search():
     webbrowser.open(fetchUrl)
     print("Thanks for using this tool! Please report any issues to github."
           "\nhttps://github.com/IAmSuyogJadhav/FaceSearch/issues")
-    os.remove('_search_.png')
+    os.remove('_search_.png')  # Removing the generated file
 
 
 def handle_click(event, x, y, flags, params):

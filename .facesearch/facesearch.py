@@ -25,6 +25,28 @@ import os
 import urllib
 
 
+def show(window, img):
+    """
+    Shows the image in OpenCV window with support for updating
+    the image in real-time. This will simply repeatedly display the image.
+    This makes real-time update of image possible and also lets us handle
+    window close events reliably.
+
+    Params:
+    window: A python string, the name of the window in which to show the image
+    img: A numpy array. Image to be shown.
+    """
+    while(1):  # Will repeatedly show the image in given window.
+        cv2.imshow(window, img)
+        k = cv2.waitKey(1) & 0xFF  # Capture the code of the pressed key.
+        # Stop the loop when the user clicks on GUI close button [x].
+        if not cv2.getWindowProperty(window, cv2.WND_PROP_VISIBLE):
+            print("Operation Cancelled")
+            break
+        if k == 27:  # Key code for ESC
+            break
+
+
 def Search():
     """
     Uploads the _search_.jpg file to Google and searches for it using Google
@@ -49,6 +71,13 @@ def handle_click(event, x, y, flags, params):
     """
     Records clicks on the image and lets the user choose one of the detected
     faces by simply pointing and clicking.
+
+    params:
+    (As needed by setMouseCallback)
+    event: The event that occured
+    x, y: Integers. Coordinates of the event
+    flags: Any flags reported by setMouseCallback
+    params: Any params returned by setMouseCallback
     """
     # Capture when the LClick is released
     if event == cv2.EVENT_LBUTTONUP and y > a // 2:  # Ignore clicks on padding
@@ -138,7 +167,6 @@ cv2.putText(  # Writing some text on the top padded portion.
         cv2.FONT_HERSHEY_DUPLEX, 0.7, (0, 200, 0), lineType=cv2.LINE_AA
         )
 
-cv2.namedWindow('Choose the face')
+cv2.namedWindow('Choose the face', cv2.WINDOW_NORMAL)
 cv2.setMouseCallback('Choose the face', handle_click)
-cv2.imshow('Choose the face', faces_copy)
-cv2.waitKey(0)
+show('Choose the face', faces_copy)

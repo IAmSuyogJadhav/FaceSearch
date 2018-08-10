@@ -45,5 +45,8 @@ Any feedback, bug reports and issues are welcome!
 
 ## Updates
   - 07-08-18: The project report is now ready! You can read it [here](Project_Report.pdf).
+  - 10-08-18: Added support for closing the output window by GUI [x] button.
+  
 
 Image Source: [Rediff](http://im.rediff.com/getahead/2018/feb/26tanmay1.jpg)
+

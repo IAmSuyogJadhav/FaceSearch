@@ -41,7 +41,7 @@ In the browser:
 
 ![alt text](./example/test1.png "Browser output")
 
-Any feedback, bug reports and issues are welcome!
+Any feedback, bug reports and issues are welcome [here](https://github.com/IAmSuyogJadhav/FaceSearch/issues/new)!
 
 ## Updates
   - 05-08-18: A blog post detailing the implementation and working of FaceSearch is live now. Read it [here](https://mlendeavours.wordpress.com/2018/08/05/facesearch/).

@@ -1,10 +1,3 @@
----
-title: FaceSearch
-layout: post
-comments: true
-# other options
----
-
 # FaceSearch
        █▀▀ █▀▀█ █▀▀ █▀▀   █▀▀ █▀▀ █▀▀█ █▀▀█ █▀▀ █  █       
        █▀▀ █▄▄█ █   █▀▀   ▀▀█ █▀▀ █▄▄█ █▄▄▀ █   █▀▀█       

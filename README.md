@@ -1,9 +1,3 @@
----
-title: FaceSearch
-layout: post
-comments: true
----
-
 # FaceSearch
        █▀▀ █▀▀█ █▀▀ █▀▀   █▀▀ █▀▀ █▀▀█ █▀▀█ █▀▀ █  █       
        █▀▀ █▄▄█ █   █▀▀   ▀▀█ █▀▀ █▄▄█ █▄▄▀ █   █▀▀█       

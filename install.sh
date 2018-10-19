@@ -10,7 +10,7 @@ cp .facesearch ~ -r
 
 # Remove existing aliases, if any
 while grep -qE "alias facesearch=\"python.+" ~/.bash_aliases
-do grep -vE "alias facesearch=\"python.+" ~/.bash_aliases > temp && mv temp ~/.bash_aliases
+do grep -vE "alias facesearch=\"python.+" ~/.bash_aliases > temp && mv -f temp ~/.bash_aliases
 done
 
 echo "alias facesearch=\"python3 ~/.facesearch/facesearch.py ~/.facesearch/face_alt.xml\"" >> ~/.bash_aliases

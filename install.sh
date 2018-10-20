@@ -1,9 +1,11 @@
 #!/bin/bash
 echo "Installing Python3.6"
 sudo apt-get install python3.6
+sudo apt-get install build-essential
+sudo apt-get install python3-pip
 
 echo "Installing OpenCV and NumPy..."
-pip install NumPy opencv-python
+pip3 install NumPy opencv-python
 
 echo "Installing FaceSearch..."
 cp .facesearch ~ -r

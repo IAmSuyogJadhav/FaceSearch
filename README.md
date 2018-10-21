@@ -54,6 +54,6 @@ Any feedback, bug reports and issues are welcome [here](./issues/new)!
   - 07-08-18: The project report is now ready! You can read it [here](./Project_Report.pdf).
   - 10-08-18: Added support for closing the output window by GUI [x] button.
   - 12-10-18: Thanks to Kaj, fixed an easy-to-miss bug. The script previously used the default system python; but, this caused an issue because of the `list.copy()` method not being defined in Python 2. Changed the script to explicitly use Python 3 now. Also, added a function in `install.sh` to remove any redundant aliases defined by the same name `facesearch`, to prevent problems occured because of running `install.sh` script multiple times.
-  - 18-10-18: Created and released the first release of FaceSearch (v1.0). Directly downloadable from [here](./releases).
+  - 18-10-18: Created and released the first release of FaceSearch (v1.0). Now directly downloadable from [here](./releases).
 
 Image Source: [Rediff](http://im.rediff.com/getahead/2018/feb/26tanmay1.jpg)
